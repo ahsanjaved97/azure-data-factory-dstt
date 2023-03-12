@@ -1,0 +1,16 @@
+{
+	"name": "SourceDataset_p7d",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Web1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "WebTable",
+		"schema": [],
+		"typeProperties": {
+			"index": 2
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

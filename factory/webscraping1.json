@@ -1,0 +1,14 @@
+{
+	"name": "webscraping1",
+	"properties": {
+		"globalConfigurations": {
+			"PipelineBillingEnabled": "true"
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "783aa2a6-f1eb-4fe0-8ac0-ecb304d9bad2",
+		"tenantId": "04eebd74-4586-4822-9a28-320d9002b9d2"
+	}
+}

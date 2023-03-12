@@ -1,0 +1,141 @@
+{
+	"name": "UpdateTables",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable2",
+						"type": "DatasetReference"
+					},
+					"name": "Players"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					},
+					"name": "Teams"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SqlServerTable1",
+						"type": "DatasetReference"
+					},
+					"name": "Updatedplayers"
+				},
+				{
+					"dataset": {
+						"referenceName": "SqlServerTable2",
+						"type": "DatasetReference"
+					},
+					"name": "UpdatedTeams"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          createdDate as timestamp,",
+				"          Id as integer,",
+				"          Player as string,",
+				"          Pos as string,",
+				"          Squad as string,",
+				"          Age as string,",
+				"          Club as string,",
+				"          Born as integer,",
+				"          MP as integer,",
+				"          Starts as integer,",
+				"          Minutes_played as integer,",
+				"          per_90s as double,",
+				"          Gls as double,",
+				"          Ast as double,",
+				"          G_PK as double,",
+				"          PK as double,",
+				"          PKatt as double,",
+				"          CrdY as double,",
+				"          CrdR as double,",
+				"          per90_Gls as double,",
+				"          per90_Ast as double,",
+				"          per90_G_A as double,",
+				"          per90_G_PK as double,",
+				"          per90_G_A_PK as double,",
+				"          exp_xG as double,",
+				"          exp_npxG as double,",
+				"          exp_xAG as double,",
+				"          exp_npxG_xAG as double,",
+				"          per90_xG as double,",
+				"          per90_xAG as double,",
+				"          per90_xG_xAG as double,",
+				"          per90_npxG as double,",
+				"          per90_npxG_xAG as double,",
+				"          Matches as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     query: 'select * from dbo.players where createdDate = (select MAX(createdDate) as latest_Time from dbo.players)',",
+				"     format: 'query') ~> Players",
+				"source(output(",
+				"          createdDate as timestamp,",
+				"          Team as string,",
+				"          PlayingTime as integer,",
+				"          Age as double,",
+				"          Possesion as double,",
+				"          Playing_time_MP as integer,",
+				"          Playing_time_Starts as integer,",
+				"          Minutes_played as integer,",
+				"          Playing_time_per_90s as double,",
+				"          performance_Gls as double,",
+				"          performance_Ast as double,",
+				"          performance_G_PK as double,",
+				"          performance_PK as double,",
+				"          performance_PKatt as double,",
+				"          performance_CrdY as double,",
+				"          performance_CrdR as double,",
+				"          per90_Gls as double,",
+				"          per90_Ast as double,",
+				"          per90_G_A as double,",
+				"          per90_G_PK as double,",
+				"          per90_G_A_PK as double,",
+				"          exp_xG as double,",
+				"          exp_npxG as double,",
+				"          exp_xAG as double,",
+				"          exp_npxG_xAG as double,",
+				"          per90_xG as double,",
+				"          per90_xAG as double,",
+				"          per90_xG_xAG as double,",
+				"          per90_npxG as double,",
+				"          per90_npxG_xAG as double",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     query: 'select * from dbo.Teams where createdDate = (select MAX(createdDate) as latest_Time from dbo.Teams)',",
+				"     format: 'query') ~> Teams",
+				"Players sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     truncate:true,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> Updatedplayers",
+				"Teams sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     truncate:true,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> UpdatedTeams"
+			]
+		}
+	}
+}

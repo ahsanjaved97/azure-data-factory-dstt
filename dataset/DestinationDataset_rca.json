@@ -1,0 +1,168 @@
+{
+	"name": "DestinationDataset_rca",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "createdDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Team",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PlayingTime",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Age",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Possesion",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Playing_time_MP",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Playing_time_Starts",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Minutes_played",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Playing_time_per_90s",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "performance_Gls",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "performance_Ast",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "performance_G_PK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "performance_PK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "performance_PKatt",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "performance_CrdY",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "performance_CrdR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_Gls",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_Ast",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_G_A",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_G_PK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_G_A_PK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "exp_xG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "exp_npxG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "exp_xAG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "exp_npxG_xAG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_xG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_xAG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_xG_xAG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_npxG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_npxG_xAG",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Teams"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

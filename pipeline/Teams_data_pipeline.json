@@ -1,0 +1,386 @@
+{
+	"name": "Teams_data_pipeline",
+	"properties": {
+		"description": "Getting data of teams from a source to a sql table",
+		"activities": [
+			{
+				"name": "Copy_rca",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "/0"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.Teams"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "WebSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Squad",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Team",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "# Pl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PlayingTime",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Age",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Age",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Poss",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Possesion",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Playing Time MP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Playing_time_MP",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Playing Time Starts",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Playing_time_Starts",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Playing Time Min",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Minutes_played",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Playing Time 90s",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Playing_time_per_90s",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Performance Gls",
+									"type": "String"
+								},
+								"sink": {
+									"name": "performance_Gls",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Performance Ast",
+									"type": "String"
+								},
+								"sink": {
+									"name": "performance_Ast",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Performance G-PK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "performance_G_PK",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Performance PK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "performance_PK",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Performance PKatt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "performance_PKatt",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Performance CrdY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "performance_CrdY",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Performance CrdR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "performance_CrdR",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Per 90 Minutes Gls",
+									"type": "String"
+								},
+								"sink": {
+									"name": "per90_Gls",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Per 90 Minutes Ast",
+									"type": "String"
+								},
+								"sink": {
+									"name": "per90_Ast",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Per 90 Minutes G+A",
+									"type": "String"
+								},
+								"sink": {
+									"name": "per90_G_A",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Per 90 Minutes G-PK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "per90_G_PK",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Per 90 Minutes G+A-PK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "per90_G_A_PK",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Expected xG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "exp_xG",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Expected npxG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "exp_npxG",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Expected xAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "exp_xAG",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Expected npxG+xAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "exp_npxG_xAG",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Per 90 Minutes xG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "per90_xG",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Per 90 Minutes xAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "per90_xAG",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Per 90 Minutes xG+xAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "per90_xG_xAG",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Per 90 Minutes npxG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "per90_npxG",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							},
+							{
+								"source": {
+									"name": "Per 90 Minutes npxG+xAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "per90_npxG_xAG",
+									"type": "Double",
+									"physicalType": "float"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": false,
+							"treatBooleanAsNumber": false,
+							"dateTimeFormat": "yyyy-mm-dd HH:mm:ss.fff",
+							"dateTimeOffsetFormat": "yyyy-mm-dd HH:mm:ss:fff zzz"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_rca",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_rca",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-12-07T00:40:50Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

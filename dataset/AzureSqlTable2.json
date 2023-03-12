@@ -1,0 +1,183 @@
+{
+	"name": "AzureSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "createdDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Player",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Pos",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Squad",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Age",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Club",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Born",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MP",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Starts",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Minutes_played",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "per_90s",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Gls",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Ast",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "G_PK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "PK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "PKatt",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CrdY",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CrdR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_Gls",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_Ast",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_G_A",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_G_PK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_G_A_PK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "exp_xG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "exp_npxG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "exp_xAG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "exp_npxG_xAG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_xG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_xAG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_xG_xAG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_npxG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "per90_npxG_xAG",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Matches",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Players"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
